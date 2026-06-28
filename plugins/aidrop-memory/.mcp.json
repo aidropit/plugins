@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "aidrop": {
+      "type": "http",
+      "url": "https://mcp.aidrop.it/mcp"
+    }
+  }
+}

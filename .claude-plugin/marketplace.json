@@ -1,0 +1,24 @@
+{
+  "name": "aidrop",
+  "owner": {
+    "name": "AIDROP Technologies",
+    "email": "info@aidrop.it"
+  },
+  "description": "aidrop.it — portable memory for AI tools. The same memory in every tool that speaks MCP.",
+  "plugins": [
+    {
+      "name": "aidrop-memory",
+      "source": "./plugins/aidrop-memory",
+      "description": "Connect Claude Code to your aidrop.it memory (remote MCP, OAuth) and install the memory-usage skill in one step.",
+      "version": "0.1.0",
+      "author": {
+        "name": "AIDROP Technologies",
+        "url": "https://aidrop.it"
+      },
+      "homepage": "https://aidrop.it",
+      "license": "MIT",
+      "keywords": ["memory", "mcp", "context", "aidrop"],
+      "category": "productivity"
+    }
+  ]
+}
