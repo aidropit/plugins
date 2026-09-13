@@ -1,5 +1,5 @@
 {
-  "name": "aidrop",
+  "name": "aidropit",
   "owner": {
     "name": "AIDROP Technologies",
     "email": "info@aidrop.it"
@@ -22,7 +22,7 @@
         "hosting",
         "mcp",
         "postgres",
-        "aidrop"
+        "aidropit"
       ],
       "category": "deployment"
     }

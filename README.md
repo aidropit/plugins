@@ -16,7 +16,7 @@ In your terminal:
 
 ```bash
 claude plugin marketplace add aidropit/plugins
-claude plugin install aidropit@aidrop
+claude plugin install aidropit@aidropit
 ```
 
 Then start Claude Code and authenticate the MCP server (one-time OAuth):
@@ -25,23 +25,23 @@ Then start Claude Code and authenticate the MCP server (one-time OAuth):
 claude
 ```
 
-Inside Claude Code, run `/mcp`, pick `aidrop`, and complete the browser sign-in. You approve one Project with `service:read` and `service:write` over it. The deploy tools (`service_build`, `service_get`, `shared_resource_create`, …) are now available — open a repository and say *"Deploy this to aidrop.it."*
+Inside Claude Code, run `/mcp`, pick `aidropit`, and complete the browser sign-in. You approve one Project with `service:read` and `service:write` over it. The deploy tools (`service_build`, `service_get`, `shared_resource_create`, …) are now available — open a repository and say *"Deploy this to aidrop.it."*
 
 ## Codex
 
 ```bash
 codex plugin marketplace add aidropit/plugins --sparse .agents/plugins
-codex plugin add aidropit@aidrop
+codex plugin add aidropit@aidropit
 ```
 
-OAuth runs on install — complete sign-in in the browser if prompted, or run `codex mcp login aidrop`.
+OAuth runs on install — complete sign-in in the browser if prompted, or run `codex mcp login aidropit`.
 
 ## Anything else that speaks MCP (Cursor, Claude, ChatGPT, VS Code, …)
 
 Point the client at the same address and approve the consent screen it opens on the first call:
 
 ```json
-{ "mcpServers": { "aidrop": { "url": "https://mcp.aidrop.it/mcp" } } }
+{ "mcpServers": { "aidropit": { "url": "https://mcp.aidrop.it/mcp" } } }
 ```
 
 A client with no local shell and git (Claude web, ChatGPT) can read, build and operate what is already in a repository, but cannot put code in — that part needs Claude Code, Codex or Cursor.
