@@ -4,21 +4,27 @@
     "name": "AIDROP Technologies",
     "email": "info@aidrop.it"
   },
-  "description": "aidrop.it — portable memory for AI tools. The same memory in every tool that speaks MCP.",
+  "description": "aidrop.it — your agent builds, we run it. Deploy what your coding agent writes to a live address, with a database, a cache and a queue when it needs them.",
   "plugins": [
     {
-      "name": "aidrop-memory",
-      "source": "./plugins/aidrop-memory",
-      "description": "Connect Claude Code to your aidrop.it memory (remote MCP, OAuth) and install the memory-usage skill in one step.",
-      "version": "0.1.0",
+      "name": "aidropit",
+      "source": "./plugins/aidropit",
+      "description": "Connect Claude Code to aidrop.it (remote MCP, OAuth): push the repository, build it, get a public address, attach a database — all from the conversation.",
+      "version": "0.2.0",
       "author": {
         "name": "AIDROP Technologies",
         "url": "https://aidrop.it"
       },
       "homepage": "https://aidrop.it",
       "license": "MIT",
-      "keywords": ["memory", "mcp", "context", "aidrop"],
-      "category": "productivity"
+      "keywords": [
+        "deploy",
+        "hosting",
+        "mcp",
+        "postgres",
+        "aidrop"
+      ],
+      "category": "deployment"
     }
   ]
 }

@@ -5,18 +5,18 @@
   },
   "plugins": [
     {
-      "name": "aidrop-memory",
+      "name": "aidropit",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/aidropit/plugins.git",
-        "path": "./plugins/aidrop-memory",
+        "path": "./plugins/aidropit",
         "ref": "main"
       },
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
       },
-      "category": "Productivity"
+      "category": "Deployment"
     }
   ]
 }

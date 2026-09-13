@@ -1,0 +1,12 @@
+{
+  "name": "aidropit",
+  "description": "Deploy what you build to aidrop.it — connects Claude Code to the aidrop.it MCP server and installs the deploy skill (push, build, public address, database, cache, queue, custom domain).",
+  "version": "0.2.0",
+  "author": {
+    "name": "AIDROP Technologies",
+    "email": "info@aidrop.it",
+    "url": "https://aidrop.it"
+  },
+  "homepage": "https://aidrop.it",
+  "keywords": ["deploy", "hosting", "mcp", "postgres", "aidrop"]
+}

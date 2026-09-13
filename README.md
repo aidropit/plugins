@@ -1,13 +1,12 @@
 # aidrop.it plugins
 
-Official plugin marketplace + skill for [**aidrop.it**](https://aidrop.it) — portable memory for AI tools. The same memory in every tool that speaks MCP, captured as you work.
+Official plugin marketplace for [**aidrop.it**](https://aidrop.it) — *your agent builds, we run it*. Your coding agent writes the code; aidrop.it keeps the repository, builds it, runs it at a public address and gives it a database, a cache or a queue when it needs one — all driven from the conversation over MCP.
 
-The **`aidrop-memory`** plugin bundles, in one install:
+The **`aidropit`** plugin is one thing: the **aidrop.it remote MCP server** (`https://mcp.aidrop.it/mcp`, OAuth — no token to paste). There is no skill to install: the server's tool descriptions carry what the agent needs.
 
-- the **aidrop.it remote MCP server** (`https://mcp.aidrop.it/mcp`, OAuth — no token to paste), and
-- the **memory skill** that teaches the agent when to read and write your memory.
+This repo hosts marketplaces for both **Claude Code** and **Codex**.
 
-This repo hosts marketplaces for both **Claude Code** and **Codex**, and the standalone **`SKILL.md`** that any Agent-Skills-compatible tool can use.
+> **Upgrading from `aidrop-memory`?** That plugin connected to the retired memory product and no longer works. Uninstall it (`claude plugin uninstall aidrop-memory@aidrop` / `codex plugin remove aidrop-memory@aidrop`) and install `aidropit` as below. The MCP server address is unchanged; an existing OAuth connection is reused.
 
 ---
 
@@ -17,7 +16,7 @@ In your terminal:
 
 ```bash
 claude plugin marketplace add aidropit/plugins
-claude plugin install aidrop-memory@aidrop
+claude plugin install aidropit@aidrop
 ```
 
 Then start Claude Code and authenticate the MCP server (one-time OAuth):
@@ -26,36 +25,28 @@ Then start Claude Code and authenticate the MCP server (one-time OAuth):
 claude
 ```
 
-Inside Claude Code, run `/mcp`, pick `aidrop`, and complete the browser sign-in. Memory tools (`memory_search`, `memory_write`, …) and the `aidrop-memory` skill are now available.
+Inside Claude Code, run `/mcp`, pick `aidrop`, and complete the browser sign-in. You approve one Project with `service:read` and `service:write` over it. The deploy tools (`service_build`, `service_get`, `shared_resource_create`, …) are now available — open a repository and say *"Deploy this to aidrop.it."*
 
 ## Codex
 
 ```bash
 codex plugin marketplace add aidropit/plugins --sparse .agents/plugins
-codex plugin add aidrop-memory@aidrop
+codex plugin add aidropit@aidrop
 ```
 
 OAuth runs on install — complete sign-in in the browser if prompted, or run `codex mcp login aidrop`.
 
-## Standalone skill (Cursor, Kiro, Gemini CLI, OpenClaw, Replit, Lovable, Figma Make, …)
+## Anything else that speaks MCP (Cursor, Claude, ChatGPT, VS Code, …)
 
-`SKILL.md` follows the open [Agent Skills](https://agentskills.io) standard, so it works in any compatible tool once you've connected the MCP server. Drop it into the tool's skills folder, e.g.:
+Point the client at the same address and approve the consent screen it opens on the first call:
 
-- Cursor — `.cursor/skills/aidrop-memory/SKILL.md`
-- Kiro — `~/.kiro/skills/aidrop-memory/SKILL.md`
-- Gemini CLI — `~/.gemini/skills/aidrop-memory/SKILL.md`
-- OpenClaw — `~/.openclaw/skills/aidrop-memory/SKILL.md`
-- Replit — `.agents/skills/aidrop-memory/SKILL.md`
-
-**Lovable** imports it straight from GitHub (`Settings → Skills → Add → Import from GitHub`):
-
-```
-https://github.com/aidropit/plugins/tree/main/plugins/aidrop-memory/skills/aidrop-memory
+```json
+{ "mcpServers": { "aidrop": { "url": "https://mcp.aidrop.it/mcp" } } }
 ```
 
-**Figma Make** — prompt box → `Skills → Add skill` → upload the `SKILL.md`.
+A client with no local shell and git (Claude web, ChatGPT) can read, build and operate what is already in a repository, but cannot put code in — that part needs Claude Code, Codex or Cursor.
 
-Full per-tool connection guides: **https://aidrop.it/install**.
+Full per-tool connection guides: **https://aidrop.it/install** · docs: **https://docs.aidrop.it/mcp**.
 
 ---
 
@@ -64,18 +55,18 @@ Full per-tool connection guides: **https://aidrop.it/install**.
 ```
 .claude-plugin/marketplace.json      Claude Code marketplace catalog
 .agents/plugins/marketplace.json     Codex marketplace catalog
-plugins/aidrop-memory/
+plugins/aidropit/
 ├── .claude-plugin/plugin.json       Claude Code manifest
 ├── .codex-plugin/plugin.json        Codex manifest
 ├── .mcp.json                        MCP server (Claude Code schema)
-├── codex.mcp.json                   MCP server (Codex schema)
-└── skills/aidrop-memory/SKILL.md    Memory skill (single source)
+└── codex.mcp.json                   MCP server (Codex schema)
 ```
 
-The MCP server is a **public OAuth client** with Dynamic Client Registration — no client secret or static token is stored in this repo.
+The MCP server is a **public OAuth client** with Dynamic Client Registration — no client secret or static token is stored in this repo. Access is per Project and revoked from **Management → Connected apps** in the dashboard.
 
 ## Links
 
 - Website — https://aidrop.it
+- Docs — https://docs.aidrop.it
 - MCP endpoint — `https://mcp.aidrop.it/mcp`
 - Support — info@aidrop.it
