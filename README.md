@@ -40,7 +40,7 @@ Point the client at the same address and approve the consent screen it opens on 
 {
   "mcpServers": {
     "aidropit": {
-      "url": "https://mcp.aidrop.it/mcp"
+      "url": "https://aidrop.it/mcp"
     }
   }
 }
@@ -66,5 +66,5 @@ The MCP server is a **public OAuth client** with Dynamic Client Registration —
 
 - Website — https://aidrop.it
 - Docs — https://docs.aidrop.it
-- MCP endpoint — `https://mcp.aidrop.it/mcp`
+- MCP endpoint — `https://aidrop.it/mcp`
 - Support — info@aidrop.it

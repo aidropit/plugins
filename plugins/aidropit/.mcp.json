@@ -2,7 +2,7 @@
   "mcpServers": {
     "aidropit": {
       "type": "http",
-      "url": "https://mcp.aidrop.it/mcp"
+      "url": "https://aidrop.it/mcp"
     }
   }
 }
