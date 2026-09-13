@@ -52,17 +52,12 @@ Point the client at the same address and approve the consent screen it opens on 
 
 ```
 .claude-plugin/marketplace.json      Claude Code marketplace catalog
-.agents/plugins/marketplace.json     Codex / ChatGPT marketplace catalog
+.agents/plugins/marketplace.json     Codex marketplace catalog
 plugins/aidropit/
-├── plugin.json                      Portable Agent Plugins manifest, with the
-│                                    OpenAI presentation metadata under
-│                                    extensions.com.openai (what the ChatGPT /
-│                                    Codex plugin page shows: developer, category,
-│                                    website, logo, starter prompts)
-├── mcp.json                         MCP server (Agent Plugins schema — Codex, ChatGPT)
 ├── .claude-plugin/plugin.json       Claude Code manifest
+├── .codex-plugin/plugin.json        Codex manifest
 ├── .mcp.json                        MCP server (Claude Code schema)
-└── assets/                          logo.png, icon.svg
+└── codex.mcp.json                   MCP server (Codex schema)
 ```
 
 The MCP server is a **public OAuth client** with Dynamic Client Registration — no client secret or static token is stored in this repo. Access is per Project and revoked from **Management → Connected apps** in the dashboard.
