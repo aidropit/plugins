@@ -1,6 +1,0 @@
-{
-  "name": "aidropit",
-  "version": "0.2.0",
-  "description": "Connects Codex to aidrop.it — the remote MCP server that builds and runs what your agent writes: push the repository, build it, get a public address, attach a database, cache or queue.",
-  "mcpServers": "./codex.mcp.json"
-}
